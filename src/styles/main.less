@@ -1,0 +1,218 @@
+@import './variables.less';
+@import './mixins.less';
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: @font-main;
+  color: @color-text;
+  line-height: 1.6;
+  background: @color-light;
+}
+
+img { max-width: 100%; display: block; }
+
+.container { .wrap(); }
+
+/* ========== 1. BARRA DE NAVEGACIÓN ========== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: @color-dark;
+
+  &__inner {
+    .wrap();
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  &__brand {
+    color: @color-white;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-decoration: none;
+    span { color: @color-accent; }
+  }
+
+  &__toggle {
+    background: none;
+    border: 0;
+    color: @color-white;
+    font-size: 1.6rem;
+    cursor: pointer;
+    .md({ display: none; });
+  }
+
+  &__links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: @color-dark;
+    list-style: none;
+    padding: 1rem 1.25rem;
+
+    &.is-open { display: flex; }
+
+    .md({
+      display: flex;
+      position: static;
+      flex-direction: row;
+      gap: 1.5rem;
+      padding: 0;
+    });
+
+    a {
+      color: #cbd5d6;
+      text-decoration: none;
+      padding: 0.4rem 0;
+      &:hover { color: @color-accent; }
+    }
+  }
+}
+
+/* ========== 2. PANEL PRINCIPAL (HERO) ========== */
+.hero {
+  .flex-center();
+  min-height: 80vh;
+  text-align: center;
+  color: @color-white;
+  background:
+    linear-gradient(rgba(11, 31, 36, 0.72), rgba(11, 31, 36, 0.72)),
+    url('https://picsum.photos/id/1015/1600/900') center / cover;
+
+  &__content { .wrap(); max-width: 750px; }
+
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    .md({ font-size: 3.2rem; });
+  }
+
+  p { font-size: 1.15rem; margin-bottom: 2rem; color: #e2eeee; }
+
+  &__btn { .button(@color-accent); color: @color-dark; }
+}
+
+/* ========== 3. TARJETAS ========== */
+.section { padding: 4rem 0; }
+
+.section__title {
+  text-align: center;
+  font-size: 2rem;
+  color: @color-dark;
+  margin-bottom: 2.5rem;
+}
+
+.cards {
+  .wrap();
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+
+  .md({ grid-template-columns: repeat(3, 1fr); });
+}
+
+.card {
+  background: @color-white;
+  border-radius: @radius;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s, box-shadow 0.25s;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+  }
+
+  img { width: 100%; height: 190px; object-fit: cover; }
+
+  &__body { padding: 1.25rem; }
+  &__title { color: @color-dark; margin-bottom: 0.5rem; }
+  &__text { font-size: 0.95rem; margin-bottom: 1rem; }
+
+  &__link {
+    color: @color-primary;
+    font-weight: 600;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+}
+
+/* ========== 4. PANEL MEDIO INVERTIDO (MITAD TEXTO, MITAD IMAGEN) ========== */
+.half-panel {
+  display: flex;
+  flex-direction: column;
+  background: @color-primary;
+  color: @color-white;
+
+  .md({ flex-direction: row; min-height: 420px; });
+
+  &__text {
+    flex: 1;
+    .flex-center();
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3rem 1.5rem;
+
+    .md({ padding: 3rem 4rem; });
+
+    h2 { font-size: 2rem; margin-bottom: 1rem; }
+    p { margin-bottom: 1.5rem; color: #d5efec; }
+  }
+
+  &__btn { .button(@color-dark); }
+
+  &__image {
+    flex: 1;
+    min-height: 260px;
+    background: url('https://picsum.photos/id/1043/1000/800') center / cover;
+  }
+
+  // Versión invertida: imagen a la izquierda, texto a la derecha
+  &--inverted {
+    background: @color-dark;
+
+    .md({ flex-direction: row-reverse; });
+
+    .half-panel__text p { color: #cbd5d6; }
+    .half-panel__btn { .button(@color-primary); }
+  }
+}
+
+/* ========== 5. PIE DE PÁGINA ========== */
+.footer {
+  background: @color-dark;
+  color: #9ca3af;
+  padding: 2.5rem 0 1.5rem;
+
+  &__inner {
+    .wrap();
+    display: grid;
+    gap: 1.5rem;
+    .md({ grid-template-columns: 2fr 1fr 1fr; });
+  }
+
+  h4 { color: @color-white; margin-bottom: 0.6rem; }
+  ul { list-style: none; }
+
+  a {
+    color: #9ca3af;
+    text-decoration: none;
+    &:hover { color: @color-accent; }
+  }
+
+  &__copy {
+    .wrap();
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #1f3a40;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+}

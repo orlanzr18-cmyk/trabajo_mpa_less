@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luciérnaga Studio | Inicio</title>
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+
+  <!-- 1. BARRA DE NAVEGACIÓN -->
+  <header class="navbar">
+    <div class="navbar__inner">
+      <a href="/index.html" class="navbar__brand">Luciérnaga<span>.</span>Studio</a>
+      <button class="navbar__toggle" aria-label="Menú">☰</button>
+      <ul class="navbar__links">
+        <li><a href="/index.html">Inicio</a></li>
+        <li><a href="/nosotros.html">Nuestra historia</a></li>
+        <li><a href="/index.html#talleres">Talleres</a></li>
+        <li><a href="/index.html#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- 2. PANEL PRINCIPAL -->
+    <section class="hero">
+      <div class="hero__content">
+        <h1>Encendemos ideas en la web</h1>
+        <p>Sitios multipágina con Vite y estilos escritos en LESS, claros y listos para crecer.</p>
+        <a href="#talleres" class="hero__btn">Explorar talleres</a>
+      </div>
+    </section>
+
+    <!-- 3. TARJETAS -->
+    <section class="section" id="talleres">
+      <h2 class="section__title">Nuestros talleres</h2>
+      <div class="cards">
+        <article class="card">
+          <img src="https://picsum.photos/id/180/600/400" alt="Taller de interfaces" />
+          <div class="card__body">
+            <h3 class="card__title">Taller de Interfaces</h3>
+            <p class="card__text">Diseñamos pantallas rápidas, adaptables y cómodas de mantener.</p>
+            <a href="#" class="card__link">Descubrir →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://picsum.photos/id/119/600/400" alt="Observatorio de datos" />
+          <div class="card__body">
+            <h3 class="card__title">Observatorio de Datos</h3>
+            <p class="card__text">Tableros e indicadores que convierten números en decisiones.</p>
+            <a href="#" class="card__link">Descubrir →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://picsum.photos/id/0/600/400" alt="Laboratorio de calidad" />
+          <div class="card__body">
+            <h3 class="card__title">Laboratorio de Calidad</h3>
+            <p class="card__text">Pruebas sistemáticas para que tu software funcione sin sorpresas.</p>
+            <a href="#" class="card__link">Descubrir →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. PANEL MEDIO INVERTIDO -->
+    <section class="half-panel half-panel--inverted">
+      <div class="half-panel__text">
+        <h2>Código con raíces</h2>
+        <p>Unimos diseño cuidado y programación ordenada para crear productos que resuelven problemas reales.</p>
+        <a href="/nosotros.html" class="half-panel__btn">Conoce nuestra historia</a>
+      </div>
+      <div class="half-panel__image"></div>
+    </section>
+  </main>
+
+  <!-- 5. PIE DE PÁGINA -->
+  <footer class="footer" id="contacto">
+    <div class="footer__inner">
+      <div>
+        <h4>Luciérnaga Studio</h4>
+        <p>Pequeñas luces para grandes ideas digitales.</p>
+      </div>
+      <div>
+        <h4>Explora</h4>
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/nosotros.html">Nuestra historia</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Escríbenos</h4>
+        <ul>
+          <li>hola@luciernaga.studio</li>
+          <li>Tegucigalpa, Honduras</li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__copy">© 2026 Luciérnaga Studio. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
